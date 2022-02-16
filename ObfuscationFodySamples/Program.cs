@@ -1,21 +1,24 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 using System.Reflection;
-using ConsoleAppSamples;
+using ObfuscationFodySamples;
 
 Console.WriteLine("Hello, World!");
 
-IAllenTest test = new AllenTest([Obfuscation(Exclude = true)] (abc) =>
+IAllenInterface test = new AllenClass([Obfuscation(Exclude = true)] (abc) =>
 {
-    AllenRecord ar = new AllenRecord()
+    AllenRecord ar = new(abc.Property1)
     {
-        Num = abc.Num + 12,
-        Algo = abc.Algo
+        Field2 = abc.Property2 + 12
     };
     Console.WriteLine(ar);
-    return abc.Algo;
+
+    return abc.Property2;
 });
 
 test.Run(AllenEnum.One);
 
 test[1] = "Hello, Allen!";
 Console.WriteLine(test[1]);
+
+Console.ReadKey();

@@ -1,2 +1,2 @@
 ﻿
-[assembly: System.Reflection.Obfuscation(Exclude = false, Feature = "我是Feature")] 
+[assembly: System.Reflection.Obfuscation(Exclude = false, Feature = "I'm a feature")] 
