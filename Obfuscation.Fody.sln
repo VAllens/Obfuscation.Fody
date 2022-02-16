@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obfuscation.Fody", "Obfuscation.Fody\Obfuscation.Fody.csproj", "{5B284C48-9388-4F82-9773-B1DEF51E0217}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Obfuscation.Fody.NuGet", "Obfuscation.Fody.NuGet\Obfuscation.Fody.NuGet.csproj", "{EEF97D7E-5EAC-41EC-BC89-0A6229B2E8D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObfuscationFodySamples", "ObfuscationFodySamples\ObfuscationFodySamples.csproj", "{188117E0-187D-4B5E-9D55-78CA9B510884}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FDA12AB6-6D7A-4B76-B930-5BBB130082EE}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		global.json = global.json
+		LICENSE = LICENSE
+		NuGet.Config = NuGet.Config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B284C48-9388-4F82-9773-B1DEF51E0217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B284C48-9388-4F82-9773-B1DEF51E0217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B284C48-9388-4F82-9773-B1DEF51E0217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B284C48-9388-4F82-9773-B1DEF51E0217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF97D7E-5EAC-41EC-BC89-0A6229B2E8D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF97D7E-5EAC-41EC-BC89-0A6229B2E8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF97D7E-5EAC-41EC-BC89-0A6229B2E8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF97D7E-5EAC-41EC-BC89-0A6229B2E8D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{188117E0-187D-4B5E-9D55-78CA9B510884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{188117E0-187D-4B5E-9D55-78CA9B510884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{188117E0-187D-4B5E-9D55-78CA9B510884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{188117E0-187D-4B5E-9D55-78CA9B510884}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73249BDB-F21D-4F82-9244-BE3B517064D1}
+	EndGlobalSection
+EndGlobal

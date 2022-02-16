@@ -1,0 +1,40 @@
+<Project Sdk="MSBuild.Sdk.Extras">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <PackageId>Obfuscation.Fody</PackageId>
+    <Authors>Allen</Authors>
+    <Copyright>Copyright © Allen All Rights Reserved</Copyright>
+    <Version>1.0.0</Version>
+    <PackageTags>Obfuscation;Fody</PackageTags>
+    <WeaverDirPath>..\$(PackageId)\bin\$(Configuration)\</WeaverDirPath>
+    <AssemblyName>Obfuscation.FodyHelper</AssemblyName>
+    <RootNamespace>Obfuscation.Fody</RootNamespace>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Description>Fody extension to modify ObfuscationAttribute</Description>
+    <PackageProjectUrl>https://github.com/VAllens/Obfuscation.Fody</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/VAllens/Obfuscation.Fody</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="6.6.0" PrivateAssets="None" />
+    <PackageReference Include="FodyPackaging" Version="6.6.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <Target Name="CopyPackages" AfterTargets="GenerateNuspec">
+    <PropertyGroup>
+      <OutputPackageDir>$(SolutionDir)packages</OutputPackageDir>
+      <NuPkgFiles>$(ProjectDir)$(OutDir)$(PackageId).$(Version).nupkg</NuPkgFiles>
+    </PropertyGroup>
+    <Message Text="OutputPackageDir: $(OutputPackageDir)" Importance="high" />
+    <Message Text="NuPkgFiles: $(NuPkgFiles)" Importance="high" />
+    <Copy SourceFiles="$(NuPkgFiles)" DestinationFolder="$(OutputPackageDir)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
+    <Message Text="Copy $(NuPkgFiles) to $(OutputPackageDir) successfully" Importance="high" />
+  </Target>
+
+</Project>
