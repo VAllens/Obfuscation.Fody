@@ -4,8 +4,8 @@
     <AssemblyName>Obfuscation.FodyHelper</AssemblyName>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
-    <WeaverDirPath>..\$(PackageId)\bin\$(Configuration)\</WeaverDirPath>
     <PackageId>Obfuscation.Fody</PackageId>
+    <WeaverDirPath>..\$(PackageId)\bin\$(Configuration)\</WeaverDirPath>
     <PackageTags>Obfuscation;Fody</PackageTags>
     <PackageIcon>fody.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -16,15 +16,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\fody.png">
+    <None Include="$(SolutionDir)fody.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\README.md">
+    <None Include="$(SolutionDir)README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\LICENSE">
+    <None Include="$(SolutionDir)LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
