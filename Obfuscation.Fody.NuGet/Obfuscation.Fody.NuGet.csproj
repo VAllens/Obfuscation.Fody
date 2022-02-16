@@ -19,7 +19,27 @@
     <Description>Fody extension to modify ObfuscationAttribute</Description>
     <PackageProjectUrl>https://github.com/VAllens/Obfuscation.Fody</PackageProjectUrl>
     <RepositoryUrl>https://github.com/VAllens/Obfuscation.Fody</RepositoryUrl>
+    <Product>Obfuscation.Fody</Product>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageIcon>fody.png</PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\fody.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Fody" Version="6.6.0" PrivateAssets="None" />

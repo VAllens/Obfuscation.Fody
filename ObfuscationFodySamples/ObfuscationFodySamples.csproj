@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Obfuscation.Fody" Version="1.0.10" />
+    <PackageReference Include="Obfuscation.Fody" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
