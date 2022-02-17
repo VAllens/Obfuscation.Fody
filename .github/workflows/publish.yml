@@ -10,23 +10,26 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      MainProject: Obfuscation.Fody
+      NuGetProject: Obfuscation.Fody.NuGet
+      Configuration: Release
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-    - name: Restore Obfuscation.Fody project dependencies
-      run: dotnet restore src/Obfuscation.Fody/Obfuscation.Fody.csproj
-    - name: Build Obfuscation.Fody project
-      run: dotnet build src/Obfuscation.Fody/Obfuscation.Fody.csproj --no-restore --configuration Release
+    - name: Restore $MainProject project dependencies
+      run: dotnet restore src/$MainProject/$MainProject.csproj
+    - name: Build $MainProject project
+      run: dotnet build src/$MainProject/$MainProject.csproj --no-restore --configuration $Configuration
     - name: Pack and publish package to NuGet
       uses: rohith/publish-nuget@v2
       with:
-        PROJECT_FILE_PATH: src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj
-        PACKAGE_NAME: Obfuscation.Fody
+        PROJECT_FILE_PATH: src/$NuGetProject/$NuGetProject.csproj
+        PACKAGE_NAME: $MainProject
         VERSION_FILE_PATH: Directory.Build.props
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
     - name: publish package to GitHub
-      run: dotnet nuget push $PACKAGE_PATH  --api-key ${{secrets.PUBLISH_TO_GITHUB_TOKEN}} --source "github"
+      run: dotnet nuget push *.nupkg --api-key ${{secrets.PUBLISH_TO_GITHUB_TOKEN}} --source "github" --skip-duplicate
