@@ -1,4 +1,4 @@
-name: NuGet publish
+name: NuGet Publish
 
 on:
   pull_request:
