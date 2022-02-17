@@ -35,7 +35,7 @@
     <PackageReference Include="FodyPackaging" Version="6.6.0" PrivateAssets="All" />
   </ItemGroup>
 
-  <Target Name="CopyPackages" AfterTargets="GenerateNuspec">
+  <!--<Target Name="CopyPackages" AfterTargets="GenerateNuspec">
     <PropertyGroup>
       <OutputPackageDir>$(SolutionDir)packages</OutputPackageDir>
       <NuPkgFiles>$(ProjectDir)$(OutDir)$(PackageId).$(Version).nupkg</NuPkgFiles>
@@ -44,6 +44,6 @@
     <Message Text="NuPkgFiles: $(NuPkgFiles)" Importance="high" />
     <Copy SourceFiles="$(NuPkgFiles)" DestinationFolder="$(OutputPackageDir)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
     <Message Text="Copy $(NuPkgFiles) to $(OutputPackageDir) successfully" Importance="high" />
-  </Target>
+  </Target>-->
 
 </Project>
