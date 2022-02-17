@@ -64,6 +64,10 @@ The `Append` default value is `false`, it is optional.
 - Destructor (**a special method**)
 - Constructor parameters (**The Constructor is a special method**)
 
+## Samples
+
+- [ObfuscationFodySamples](https://github.com/VAllens/Obfuscation.Fody/tree/develop/samples)
+
 ## Authors
 
 - [Allen Cai](https://github.com/VAllens)
