@@ -21,10 +21,6 @@ jobs:
       run: dotnet restore src/Obfuscation.Fody/Obfuscation.Fody.csproj
     - name: Build Obfuscation.Fody project
       run: dotnet build src/Obfuscation.Fody/Obfuscation.Fody.csproj --no-restore --configuration Release
-    - name: Restore Obfuscation.Fody.NuGet project dependencies
-      run: dotnet restore src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj
-    - name: Build Obfuscation.Fody.NuGet project
-      run: dotnet build src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj --no-restore --configuration Release
     - name: Pack and publish package to NuGet
       uses: rohith/publish-nuget@v2
       with:
@@ -33,4 +29,4 @@ jobs:
         VERSION_FILE_PATH: Directory.Build.props
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
     - name: publish package to GitHub
-      run: dotnet nuget push *.nupkg --api-key ${{secrets.PUBLISH_TO_GITHUB_TOKEN}} --source "github" --skip-duplicate
+      run: dotnet nuget push *.nupkg --api-key ${{secrets.PUBLISH_TO_GITHUB_TOKEN}} --source "https://nuget.pkg.github.com/VAllens/index.json" --skip-duplicate
