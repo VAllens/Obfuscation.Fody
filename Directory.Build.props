@@ -1,0 +1,20 @@
+﻿<Project>
+ <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Obfuscation.Fody</RootNamespace>
+    <Product>Obfuscation.Fody</Product>
+    <Description>Fody extension to modify ObfuscationAttribute</Description>
+    <Copyright>Copyright © Allen All Rights Reserved</Copyright>
+    <Authors>Allen</Authors>
+    <Version>1.0.0</Version>
+    <RepositoryUrl>https://github.com/VAllens/Obfuscation.Fody</RepositoryUrl>
+   <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+ </PropertyGroup>
+
+  <PropertyGroup>
+    <SolutionDir Condition=" '$(SolutionDir)' == '' ">$(ProjectDir)..\..\</SolutionDir>
+  </PropertyGroup>
+</Project>

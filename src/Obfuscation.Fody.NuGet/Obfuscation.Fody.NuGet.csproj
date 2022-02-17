@@ -1,41 +1,30 @@
-<Project Sdk="MSBuild.Sdk.Extras">
+﻿<Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Obfuscation.FodyHelper</AssemblyName>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
     <PackageId>Obfuscation.Fody</PackageId>
-    <Authors>Allen</Authors>
-    <Copyright>Copyright © Allen All Rights Reserved</Copyright>
-    <Version>1.0.0</Version>
-    <PackageTags>Obfuscation;Fody</PackageTags>
     <WeaverDirPath>..\$(PackageId)\bin\$(Configuration)\</WeaverDirPath>
-    <AssemblyName>Obfuscation.FodyHelper</AssemblyName>
-    <RootNamespace>Obfuscation.Fody</RootNamespace>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Description>Fody extension to modify ObfuscationAttribute</Description>
-    <PackageProjectUrl>https://github.com/VAllens/Obfuscation.Fody</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/VAllens/Obfuscation.Fody</RepositoryUrl>
-    <Product>Obfuscation.Fody</Product>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageTags>Obfuscation;Fody</PackageTags>
     <PackageIcon>fody.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/VAllens/Obfuscation.Fody</PackageProjectUrl>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\fody.png">
+    <None Include="$(SolutionDir)fody.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\README.md">
+    <None Include="$(SolutionDir)README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\LICENSE">
+    <None Include="$(SolutionDir)LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

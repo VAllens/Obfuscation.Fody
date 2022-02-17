@@ -1,0 +1,29 @@
+name: .NET Build
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore Obfuscation.Fody project dependencies
+      run: dotnet restore src/Obfuscation.Fody/Obfuscation.Fody.csproj
+    - name: Restore Obfuscation.Fody.NuGet project dependencies
+      run: dotnet restore src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj
+    - name: Build Obfuscation.Fody project
+      run: dotnet build src/Obfuscation.Fody/Obfuscation.Fody.csproj --no-restore --configuration Release
+    - name: Build Obfuscation.Fody.NuGet project
+      run: dotnet build src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj --no-restore --configuration Release
+    - name: Pack Obfuscation.Fody.NuGet project
+      run: dotnet pack src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj --no-build --configuration Release
+    - name: Test
+      run: dotnet test --no-build --verbosity normal

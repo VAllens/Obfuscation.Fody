@@ -7,7 +7,7 @@ namespace Obfuscation.Fody;
 /// Obfuscation module weaver.
 /// </summary>
 /// <seealso cref="BaseModuleWeaver" />
-public sealed class ModuleWeaver : BaseModuleWeaver
+public sealed class ModuleWeaver : BaseModuleWeaver, IWeaver
 {
     public override void Execute()
     {
@@ -53,10 +53,10 @@ public sealed class ModuleWeaver : BaseModuleWeaver
 
         var obfuscationAttributeRef = new TypeReference("System.Reflection", nameof(System.Reflection.ObfuscationAttribute), ModuleDefinition, runtimes);
 
-        var assemblyWeaver = new AssemblyWeaver(ModuleDefinition, featureAttribute.Value, isAppend, obfuscationAttributeRef, WriteInfo, WriteError);
+        IWeaver assemblyWeaver = new AssemblyObfuscationWeaver(ModuleDefinition, featureAttribute.Value, isAppend, obfuscationAttributeRef, WriteInfo, WriteError);
         assemblyWeaver.Execute();
 
-        var propertyWeaver = new TypeWeaver(ModuleDefinition, featureAttribute.Value, isAppend, obfuscationAttributeRef, WriteInfo, WriteError);
+        IWeaver propertyWeaver = new TypeObfuscationWeaver(ModuleDefinition, featureAttribute.Value, isAppend, obfuscationAttributeRef, WriteInfo, WriteError);
         propertyWeaver.Execute();
     }
 
