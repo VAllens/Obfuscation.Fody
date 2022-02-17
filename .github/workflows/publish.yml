@@ -29,3 +29,4 @@ jobs:
       uses: rohith/publish-nuget@v2
       with:
         PROJECT_FILE_PATH: src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj
+        VERSION_FILE_PATH: Directory.Build.props
