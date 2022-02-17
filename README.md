@@ -1,14 +1,36 @@
 # ![Obfuscation.Fody](https://github.com/VAllens/Obfuscation.Fody/raw/main/fody.png) Obfuscation.Fody
 
-[![.NET Build](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/build.yml/badge.svg?branch=develop&event=push)](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/build.yml) [![NuGet Publish](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/publish.yml/badge.svg?branch=main&event=pull_request)](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/publish.yml)
+[![.NET Build](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/build.yml/badge.svg?branch=develop&event=push)](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/build.yml)
+[![NuGet Publish](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/publish.yml/badge.svg?branch=main&event=pull_request)](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/publish.yml)
+[![CodeQL](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/codeql-analysis.yml/badge.svg?branch=develop&event=push)](https://github.com/VAllens/Obfuscation.Fody/actions/workflows/codeql-analysis.yml)
 
 ## Summary
 
-### This is a [Fody](https://github.com/Fody/Fody) extension to modify `ObfuscationAttribute`.
-
-It will get the attribute target that contains `ObfuscationAttribute`, and filter out the attribute target whose `Exclude` property value is equal to `true`, and modify the eligible `Feature` property value. Other properties remain the same.
+This is a **[Fody](https://github.com/Fody/Fody)** extension to modify `ObfuscationAttribute`.
 
 ## Usage
+
+.NET CLI:
+
+```cmd
+dotnet add package Obfuscation.Fody --version 1.0.0
+```
+
+or PowerShell:
+
+```powershell
+Install-Package Obfuscation.Fody -Version 1.0.0
+```
+
+or Edit project items:
+
+```xml
+<ItemGroup>
+  <PackageReference Include="Obfuscation.Fody" Version="1.0.0" />
+</ItemGroup>
+```
+
+It will get the attribute target that contains `ObfuscationAttribute`, and filter out the attribute target whose `Exclude` property value is equal to `true`, and modify the eligible `Feature` property value. Other properties remain the same.
 
 It has one configuration element:
 
@@ -37,10 +59,10 @@ The `Append` default value is `false`, it is optional.
 - Interface
 - Parameter
 - Delegate
-- Record (a special class)
-- Indexer (a special property)
-- Destructor (a special method)
-- Constructor parameters (The Constructor is a special method)
+- Record (**a special class**)
+- Indexer (**a special property**)
+- Destructor (**a special method**)
+- Constructor parameters (**The Constructor is a special method**)
 
 ## Authors
 
