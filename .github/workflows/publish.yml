@@ -1,8 +1,6 @@
 name: NuGet Publish
 
 on:
-  push:
-    branches: [ develop ]
   pull_request:
     branches: [ main ]
 

@@ -24,6 +24,6 @@ jobs:
     - name: Build Obfuscation.Fody.NuGet project
       run: dotnet build src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj --no-restore --configuration Release
     - name: Pack Obfuscation.Fody.NuGet project
-      run: dotnet pack src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj --no-build --configuration Release
+      run: dotnet pack src/Obfuscation.Fody.NuGet/Obfuscation.Fody.NuGet.csproj --no-build --configuration Release --include-symbols -p:SymbolPackageFormat=snupkg -o .
     - name: Test
       run: dotnet test --no-build --verbosity normal
