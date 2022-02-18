@@ -74,4 +74,4 @@ The `Append` default value is `false`, it is optional.
 
 ## License
 
-[MIT](LICENSE)
+- [MIT](LICENSE)
