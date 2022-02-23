@@ -3,22 +3,11 @@
 using System.Reflection;
 using ObfuscationFodySamples;
 
-Console.WriteLine("Hello, World!");
+Type type = typeof(IAllenInterface);
+Type obfuscationAttributeType = typeof(ObfuscationAttribute);
 
-IAllenInterface test = new AllenClass([Obfuscation(Exclude = true)] (abc) =>
-{
-    AllenRecord ar = new(abc.Property1)
-    {
-        Field2 = abc.Property2 + 12
-    };
-    Console.WriteLine(ar);
-
-    return abc.Property2;
-});
-
-test.Run(AllenEnum.One);
-
-test[1] = "Hello, Allen!";
-Console.WriteLine(test[1]);
+CustomAttributeData obfuscationAttributeInstance = type.CustomAttributes.First(x => x.AttributeType == obfuscationAttributeType);
+CustomAttributeNamedArgument feature = obfuscationAttributeInstance.NamedArguments.First(x => x.MemberName == nameof(ObfuscationAttribute.Feature));
+Console.WriteLine("Obfuscation Feature: " + feature.TypedValue.Value);
 
 Console.ReadKey();
